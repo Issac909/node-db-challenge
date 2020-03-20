@@ -26,7 +26,6 @@ exports.up = function(knex) {
           .onUpdate("CASCADE");
       })
       .createTable("proj-resources", proj => {
-        proj.increments().primary();
         proj
         .integer("project_id")
         .notNullable()
@@ -41,6 +40,7 @@ exports.up = function(knex) {
         .inTable("resources")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
+        proj.primary(['project_id', 'resource_id'])
       } )
   };
   

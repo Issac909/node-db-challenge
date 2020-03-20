@@ -1,11 +1,7 @@
-const server = require('./server');
+const knex = require('knex');
 
-const PORT = process.env.PORT || 4000;
+const config = require('../knexfile');
 
-server.get('/', (req, res) => {
-  res.send('<h1>Node DB Sprint Challenge!</h1>')
-})
+const db = knex(config.development);
 
-server.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}...`);
-}); 
+module.exports = db;
