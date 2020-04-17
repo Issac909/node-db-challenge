@@ -1,10 +1,10 @@
 exports.up = function (knex) {
   return knex.schema
   .createTable('projects', (project) => {
-    project.increments();
-    project.text('name', 128).notNullable();
-    project.text('description');
-    project.boolean('completed').defaultTo(false);
+      project.increments();
+      project.text('name', 128).notNullable();
+      project.text('description');
+      project.boolean('completed').defaultTo(false);
   })
   .createTable('resources', resource => {
       resource.increments();
