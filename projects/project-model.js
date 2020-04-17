@@ -10,11 +10,11 @@ module.exports = {
     addTask
 }
 
-const getProjects= () => {
+function getProjects() {
     return db('projects');
 };
 
-const addProject = project => {
+function addProject(project) {
     return db('projects')
         .insert(project)
         .then(ids => {
@@ -22,25 +22,25 @@ const addProject = project => {
         });
 };
 
-const getAllResources = () => {
+function getAllResources() {
     return db('resources');
 }
 
-const addResource = resource => {
-    return db('resource').insert(resource);
+function addResource(resource) {
+    return db('resources').insert(resource);
 };
 
-const findById = id => {
+function findById(id) {
     return db('projects').where({ id }).first();
 };
 
-const getTasks = id => {
+function getTasks(id) {
     return db('projects')
         .join('tasks', 'tasks.project_id', 'projects.id')
         .select('tasks.id', 'projects.id', 'projects.name', 'projects.description', 'tasks.notes', 'tasks.completed')
         .where({ 'tasks.project_id': id });
 };
 
-const addTask = task => {
+function addTask(task) {
     return db('tasks').insert(task);
 };

@@ -17,17 +17,17 @@ exports.up = function (knex) {
       task.text('notes');
       task.boolean('completed').defaultTo(false);
       task
-        .integer('project_id').notNullable()
+        .integer('project_id')
         .references('id').inTable('projects')
         .onDelete('CASCADE').onUpdate('CASCADE');
   })
   .createTable('project-resources', tbl => {
       tbl
-        .integer('project_id').notNullable()
-        .inTable('projects').references('id')
+        .integer('project_id')
+        .references('id').inTable('projects')
         .onDelete('CASCADE').onUpdate('CASCADE');
       tbl
-        .integer('resource_id').notNullable()
+        .integer('resource_id')
         .references('id').inTable('resources')
         .onDelete('CASCADE').onUpdate('CASCADE');
       tbl
