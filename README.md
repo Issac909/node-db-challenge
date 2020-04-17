@@ -39,12 +39,19 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
+  A relational database is what allows us to create and manage databases. SQL stands for Structured Query Language, and is used by the relational database for management.
 
 - [ ] Why do tables need a `primary key`?
+  Primary keys are needed for: 
+
+  A. A unique identifier keeping corresponding data within the table tied to the primary key 
+  B. We can reference the primary key as a foreign key in another table to join that specific info 
 
 - [ ] What is the name given to a table column that references the primary key on another table.
+  Foreign Key
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+  A many to many relationship would require a bridge table. A bridge table consists of the a primary key that is made from foreign keys. The foreign keys would come from the 2 ids from the tables we are trying to establish a many to many relationship with.
 
 ## Minimum Viable Product
 
